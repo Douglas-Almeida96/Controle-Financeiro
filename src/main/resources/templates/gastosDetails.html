@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Gastos</title>
+    <meta charset="UTF-8"/> 
+    <!--CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">Control Cash</span>
+        </nav>
+    </header>
+
+   <section>
+        <div class="container"  style="width: 60%; padding-bottom: 30px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                       <li class="breadcrumb-item active" aria-current="page">Gasto</li>
+                </ol>
+            </nav>
+            <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" >
+                <div class="card-body">
+                    <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+                        <span th:text="${gasto.valor}"></span></a>
+                        <span th:text="${gasto.data}"></span>
+                        <span th:text="${gasto.tipoGasto}"></span></a>
+                        <span th:text="${gasto.formaPagamento}"></span>
+                    </p>
+                    <a th:href="@{'/alterar/'+${gasto.ID}}" class="btn btn-primary" role="button">Editar</a>
+                    <a th:href="@{'/deletar/'+${gasto.ID}}" class="btn btn-danger" role="button">excluir</a>
+                </div>
+           </div>
+    </div>
+    </section>
+</body>
+</html>
